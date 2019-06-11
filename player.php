@@ -26,10 +26,10 @@ $sql->bind_param("s", $idPlayer);
 $sql->execute();
 $player = $sql->get_result()->fetch_assoc();
   
-$date = new DateTime();
+$date = new DateTime($player["birthday"]);
 $now = new DateTime();
 $interval = $now->diff($date);
-echo $interval->y;
+ 
 
 
 
@@ -54,7 +54,7 @@ echo $interval->y;
         <tbody>
             <td><?= $player["firstname"]?></td>
             <td><?= $player["surname"]?></td>            
-            <td><?= $player["birthday"] ?></td>
+            <td><?= $interval->y;?></td>
             <td><?= $player["count"] ?></td>
 
         </tbody>

@@ -7,7 +7,7 @@ include_once __DIR__ . DIRECTORY_SEPARATOR . "header.php";
 
 ?>
 
-    
+
 
 
 <h2>Players</h2>
@@ -17,8 +17,8 @@ include_once __DIR__ . DIRECTORY_SEPARATOR . "header.php";
       <tr>
         <th>Firstname</th>
         <th>Surname</th>
-        
-        
+
+
 
 
       </tr>
@@ -29,9 +29,10 @@ $sql = $mysqli->prepare("SELECT *
 FROM players");
 $sql->execute();
 $result = $sql->get_result();
-while ($player = $result->fetch_assoc()) { ?>
+while ($player = $result->fetch_assoc()) {
+    ?>
 
-      <a href="player.php?idPlayer=<?php echo $player['id_player'];?>">
+      <a href="player.php?idPlayer=<?php echo $player['id_player']; ?>">
 
 
 
@@ -42,8 +43,8 @@ while ($player = $result->fetch_assoc()) { ?>
           <td>
             <?php echo $player['surname'] ?>
           </td>
-         
-         
+
+
           <td>
             <a href="player.php?idPlayer=<?= $player['id_player'] ?>" class="btn btn-primary"></a>
           </td>
@@ -52,10 +53,6 @@ while ($player = $result->fetch_assoc()) { ?>
 
 
         <?php
-  
-    
-       
-
 }
 ?>
 
