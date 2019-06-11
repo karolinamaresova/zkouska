@@ -1,0 +1,14 @@
+
+
+.players {
+    border: solid 1px black;
+}
+
+.players thead th {
+    border: solid 1px red;
+}
+
+.players tbody td {
+    border: solid 1px red;
+    text-align: center;
+}
